@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<img src="assets/img/mobike.png">
+
+<ion-content padding>
+  <form [formGroup]="person">
+    <ion-item>
+      <ion-label position="floating">Primeiro Nome</ion-label>
+      <ion-input type="text" required formControlName="first_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Segundo Nome</ion-label>
+      <ion-input type="text" required formControlName="second_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" required formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" required formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button shape="round" color="primary" expand="block" [disabled]="!person.valid" (click)="savePerson()">Submit</ion-button>
+  </form>
+</ion-content>
